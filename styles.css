@@ -1,0 +1,261 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #101018;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: #181822;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #e94560;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #dddddf;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #e94560;
+}
+
+.portada {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    padding: 65px 7%;
+    background: linear-gradient(120deg, #24243b, #171721);
+}
+
+.contenido-portada {
+    max-width: 680px;
+}
+
+.etiqueta {
+    color: #e94560;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    margin: 12px 0;
+}
+
+.contenido-portada > p:not(.etiqueta) {
+    color: #ccccd6;
+    margin-bottom: 22px;
+}
+
+#formulario-busqueda {
+    display: flex;
+    gap: 10px;
+    max-width: 570px;
+}
+
+#busqueda {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #414154;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 15px;
+}
+
+button {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#formulario-busqueda button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #e94560;
+    color: #ffffff;
+}
+
+#formulario-busqueda button:hover {
+    background: #c8324b;
+}
+
+.seccion-catalogo {
+    padding: 45px 7%;
+    min-height: 350px;
+}
+
+.titulo-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+.filtros {
+    display: flex;
+    gap: 8px;
+}
+
+.filtro {
+    padding: 10px 16px;
+    border: 1px solid #393949;
+    border-radius: 20px;
+    background: #20202c;
+    color: #ffffff;
+}
+
+.filtro.activo {
+    background: #e94560;
+    border-color: #e94560;
+}
+
+#estado {
+    color: #c5c5d0;
+    margin: 20px 0;
+}
+
+.rejilla-peliculas {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.tarjeta {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #292938;
+    border-radius: 10px;
+    background: #1b1b27;
+    transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: #292938;
+}
+
+.info-tarjeta {
+    padding: 12px;
+}
+
+.info-tarjeta h3 {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.fecha {
+    color: #b9b9c7;
+    font-size: 13px;
+}
+
+.calificacion {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ffd166;
+    font-size: 13px;
+}
+
+footer {
+    padding: 25px 7%;
+    background: #181822;
+    color: #b9b9c7;
+    text-align: center;
+    font-size: 13px;
+}
+
+footer a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #ffffff;
+}
+
+@media (max-width: 1000px) {
+    .rejilla-peliculas {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .portada {
+        padding: 45px 6%;
+    }
+
+    .seccion-catalogo {
+        padding: 35px 6%;
+    }
+
+    #formulario-busqueda {
+        flex-wrap: wrap;
+    }
+
+    #busqueda {
+        width: 100%;
+        flex-basis: 70%;
+    }
+
+    .rejilla-peliculas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}

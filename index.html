@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMundo | Películas y Series</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+
+    <header class="encabezado">
+        <a href="#" class="logo">Cine<span>Mundo</span></a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Películas</a>
+            <a href="#catalogo">Series</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portada" id="inicio">
+            <div class="contenido-portada">
+                <p class="etiqueta">TU ESPACIO DE ENTRETENIMIENTO</p>
+                <h1>Descubre tu próxima historia favorita</h1>
+                <p>
+                    Explora películas y series, descubre sus historias
+                    y encuentra algo nuevo para ver.
+                </p>
+
+                <form id="formulario-busqueda">
+                    <input
+                        type="search"
+                        id="busqueda"
+                        placeholder="Buscar una película o serie..."
+                        aria-label="Buscar películas o series"
+                        required
+                    >
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="seccion-catalogo" id="catalogo">
+            <div class="titulo-seccion">
+                <div>
+                    <p class="etiqueta">CATÁLOGO</p>
+                    <h2 id="titulo-catalogo">Películas populares</h2>
+                </div>
+
+                <div class="filtros">
+                    <button class="filtro activo" data-tipo="movie">
+                        Películas
+                    </button>
+                    <button class="filtro" data-tipo="tv">
+                        Series
+                    </button>
+                </div>
+            </div>
+
+            <p id="estado" role="status" aria-live="polite">
+                Cargando catálogo...
+            </p>
+
+            <div id="resultados" class="rejilla-peliculas"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>CineMundo © 2026 | Catálogo de películas y series</p>
+        <p>
+            Este producto utiliza la API de TMDB, pero no está
+            respaldado ni certificado por TMDB.
+        </p>
+        <a href="https://www.themoviedb.org/" target="_blank"
+           rel="noopener noreferrer">
+            Datos proporcionados por TMDB
+        </a>
+    </footer>
+
+</body>
+</html>
